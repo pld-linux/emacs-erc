@@ -13,10 +13,10 @@ Requires:	emacs >= 21.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-IRC Client for Emacs
+IRC Client for Emacs.
 
 %description -l pl
-Klient irca dla Emacsa
+Klient irca dla Emacsa.
 
 %prep
 %setup -q -n erc-%{version}
@@ -27,8 +27,7 @@ Klient irca dla Emacsa
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/emacs/site-lisp
-install erc*.el	$RPM_BUILD_ROOT%{_datadir}/emacs/site-lisp/
-
+install erc*.el	$RPM_BUILD_ROOT%{_datadir}/emacs/site-lisp
 
 %clean
 rm -rf $RPM_BUILD_ROOT
