@@ -16,7 +16,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 IRC Client for Emacs
 
 %description -l pl
-IRC Client for Emacs
+Klient irca dla Emacsa
 
 %prep
 %setup -q -n erc-%{version}
