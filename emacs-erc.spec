@@ -5,7 +5,7 @@ Version:	4.0
 Release:	0.9
 License:	GPL v2
 Group:		Applications/Editors/Emacs
-Source0:	http://belnet.dl.sourceforge.net/sourceforge/erc/erc-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/sourceforge/erc/erc-%{version}.tar.gz
 # Source0-md5:	4242f5ef41838a395fd5eb4dc3072627
 URL:		http://www.emacswiki.org/cgi-bin/wiki?EmacsIRCClient
 BuildRequires:	emacs
