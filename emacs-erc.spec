@@ -1,12 +1,12 @@
 Summary:	IRC Client for Emacs
 Summary(pl):	Klient irca dla Emacsa
 Name:		emacs-erc
-Version:	4.0
-Release:	0.9
+Version:	5.0.4
+Release:	0.1
 License:	GPL v2
 Group:		Applications/Editors/Emacs
 Source0:	http://dl.sourceforge.net/erc/erc-%{version}.tar.gz
-# Source0-md5:	4242f5ef41838a395fd5eb4dc3072627
+# Source0-md5:	7162aedf0a0d4893425f1c669b2ea403
 URL:		http://www.emacswiki.org/cgi-bin/wiki?EmacsIRCClient
 BuildRequires:	emacs
 Requires:	emacs >= 21.1
