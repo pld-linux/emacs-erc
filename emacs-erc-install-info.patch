@@ -1,0 +1,22 @@
+--- erc-5.1.2/Makefile~	2006-03-27 19:32:49.000000000 +0200
++++ erc-5.1.2/Makefile	2006-03-27 19:35:32.000000000 +0200
+@@ -26,7 +26,7 @@
+ #EMACS    = xemacs
+ #SITEFLAG = -no-site-file
+ 
+-INSTALLINFO = install-info --info-dir=$(INFODIR)
++INSTALLINFO = /usr/sbin/install-info --info-dir=$(INFODIR)
+ 
+ # If you're using Debian, uncomment the following line and comment out
+ #the above line.
+@@ -67,8 +67,8 @@
+ 
+ install-info: $(MANUAL).info
+ 	[ -d $(DESTDIR)$(INFODIR) ] || install -d $(DESTDIR)$(INFODIR)
+-	install -m 0644 $(MANUAL).info $(DESTDIR)$(INFODIR)/$(MANUAL)
+-	$(INSTALLINFO) $(DESTDIR)$(INFODIR)/$(MANUAL)
++	install -m 0644 $(MANUAL).info $(DESTDIR)$(INFODIR)
++#	$(INSTALLINFO) $(DESTDIR)$(INFODIR)/$(MANUAL)
+ 
+ install-bin: lisp
+ 	install -d $(DESTDIR)$(ELISPDIR)

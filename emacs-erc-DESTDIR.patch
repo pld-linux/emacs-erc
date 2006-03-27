@@ -1,0 +1,21 @@
+--- erc-5.1.2/Makefile~	2006-02-20 05:38:05.000000000 +0100
++++ erc-5.1.2/Makefile	2006-03-27 19:12:20.000000000 +0200
+@@ -66,13 +66,13 @@
+ 	-rm -f $(MANUAL).info $(MANUAL).html $(TARGET) $(SPECIAL)
+ 
+ install-info: $(MANUAL).info
+-	[ -d $(INFODIR) ] || install -d $(INFODIR)
+-	install -m 0644 $(MANUAL).info $(INFODIR)/$(MANUAL)
+-	$(INSTALLINFO) $(INFODIR)/$(MANUAL)
++	[ -d $(DESTDIR)$(INFODIR) ] || install -d $(DESTDIR)$(INFODIR)
++	install -m 0644 $(MANUAL).info $(DESTDIR)$(INFODIR)/$(MANUAL)
++	$(INSTALLINFO) $(DESTDIR)$(INFODIR)/$(MANUAL)
+ 
+ install-bin: lisp
+-	install -d $(ELISPDIR)
+-	install -m 0644 $(ALLSOURCE) $(TARGET) $(ELISPDIR)
++	install -d $(DESTDIR)$(ELISPDIR)
++	install -m 0644 $(ALLSOURCE) $(TARGET) $(DESTDIR)$(ELISPDIR)
+ 
+ install: install-bin install-info
+ 
