@@ -13,11 +13,13 @@ Source0:	http://dl.sourceforge.net/erc/erc-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-install-info.patch
 URL:		http://www.emacswiki.org/cgi-bin/wiki?EmacsIRCClient
-BuildRequires:	emacs
+BuildRequires:	emacs >= 21.1
+BuildRequires:	texinfo
 Requires:	emacs >= 21.1
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define site_lisp_dir %{_emacs_lispdir}/erc
+%define _pkglispdir %{_emacs_lispdir}/erc
 
 %description
 IRC Client for Emacs.
@@ -32,16 +34,21 @@ Klient irca dla Emacsa.
 
 %build
 %{__make}
+%{__make} doc
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_pkglispdir}/images
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	ELISPDIR="%{site_lisp_dir}" \
+	ELISPDIR="%{_pkglispdir}" \
 	INFODIR="%{_infodir}"
 
-rm -f $RPM_BUILD_ROOT%{site_lisp_dir}/*.el
+install images/* $RPM_BUILD_ROOT%{_pkglispdir}/images
+
+rm -f $RPM_BUILD_ROOT%{_pkglispdir}/*.el
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -54,6 +61,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc HISTORY README AUTHORS ChangeLog CREDITS
-%{site_lisp_dir}/*.elc
+%doc AUTHORS CREDITS HISTORY NEWS README ChangeLog* erc.html servers.pl
+%dir %{_pkglispdir}
+%{_pkglispdir}/*.elc
+%{_pkglispdir}/images
 %{_infodir}/*
