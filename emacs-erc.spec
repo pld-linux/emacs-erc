@@ -2,7 +2,7 @@
 # TODO:	- xemacs pkg, rename to emacsen-erc.spec
 #
 Summary:	IRC Client for Emacs
-Summary(pl.UTF-8):   Klient irca dla Emacsa
+Summary(pl.UTF-8):	Klient irca dla Emacsa
 Name:		emacs-erc
 Version:	5.1.2
 Release:	1
