@@ -65,4 +65,4 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_pkglispdir}
 %{_pkglispdir}/*.elc
 %{_pkglispdir}/images
-%{_infodir}/*
+%{_infodir}/*.info*
